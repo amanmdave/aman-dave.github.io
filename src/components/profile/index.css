@@ -1,0 +1,81 @@
+
+.Cover{
+    background-image: url('../../images/cover.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    width: 100%;
+    float: bottom;
+}
+
+.Block {
+    font-family: Roboto;
+    display: flex;
+    height: 60rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .Block {
+        height: 65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Block {
+        height: 75rem;
+    }
+}
+.Block .BlockIcon {
+    position: relative;
+    top: -20%;
+    width: 20rem;
+    height: 20rem;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.Block .BlockIcon img {
+    position: relative;
+    top: -10%;
+    width: 20rem;
+}
+.Block h4 {
+    position: relative;
+    top: -20%;
+    margin: 0 auto;
+    color: #505d68;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 39px;
+    text-align: center;
+}
+
+.Block h6 {
+    position: relative;
+    top: -20%;
+    margin: 0 auto;
+    color: #505d68;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 39px;
+    text-align: center;
+}
+
+.Block p {
+    position: relative;
+    top: -20%;
+    color: var(--secondary-text-color);
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 24px;
+
+    text-align: center;
+}

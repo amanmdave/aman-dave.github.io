@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-template-js","path":"/tags/phase/","webpackCompilationHash":"","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/blog/gsocphaseone/"},"frontmatter":{"title":"GSoC Phase One","date":"June 29, 2019"}}}]}},"pageContext":{"isCreatedByStatefulCreatePages":false,"tag":"Phase"}}}
