@@ -37,9 +37,11 @@ void function() {
 }()
     </script><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="background-color:var(--bg);color:var(--textNormal);transition:color 0.2s ease-out, background 0.2s ease-out"><div style="margin:0 auto;max-width:960px;padding:0px 1.0875rem 1.45rem;padding-top:0"><main><h1 class="blogHeader"><span>Aman Dave</span><div style="float:right;font-size:20px;padding-top:10px"><label><div class="react-toggle dark-theme"><div class="react-toggle-track"><div class="react-toggle-track-check"><img src="/static/sun-636b3a1eef4b1172bab054bd83b14e36.png" height="20px" style="margin-top:-5px;margin-left:-5px"/></div><div class="react-toggle-track-x"><img src="/static/moon-aa4c148b755cef9618c91d49cd4a72e8.png" height="20px" style="margin-top:-5px;margin-left:-5px"/></div></div><div class="react-toggle-thumb"></div><input type="checkbox" value="false" class="react-toggle-screenreader-only"/></div></label></div></h1><section><div class="blogTitle"><h1>Next Step in Data Science</h1><span>July 11, 2019</span></div><br/><hr/><br/><div class="blogText"><h1>Unsupervised Learning</h1>
 <br/>
-<p>This blog is the next part of the blog I shared last time, where the basics of supervised learning were discussed. One thing I would love to add this time is some basic pseudocode to the blog so that next time I am doing anything related I can have some reference for the same.</p>
+<p>In the last blog the basics of supervised learning were discussed. I gave details about the track I have been following and its content.</p>
+<p>For this blog, I would like to give some basic information about the content along with some pseudocode. I will try to treat this as a very basic tutorial for unsupervised learning. </p>
 <p>Supervised learning becomes useful when we have a predefined set of labels on which we want to train our dataset. But, that's always not the case in real-world scenarios. How do we deal with datasets without having specific sets of categories in mind? A dataset containing images with no predefined categories associated would be a good example or maybe a newly discovered heavenly body? Should we call it a Planet (Sorry Pluto) or a dwarf planet or maybe even an asteroid? Such cases are where Unsupervised Learning comes into the picture.</p>
-<p>Clustering a Dataset and evaluating it are the most basic steps. One of the key to selecting the number of clusters for a given dataset is selecting the elbow point in the inertia vs clusters graph. Sci-kit learn provides tremendous support for unsupervised learning in python and one of the basic models include <code class="language-text">KMeans()</code>.</p>
+<p>As mentioned, our dataset won't contain preset labels. To overcome this, a very basic method: K-means is applied on the dataset.</p>
+<p>K-means tries to cluster our dataset into n clusters. One of the key to selecting the number of clusters for a given dataset is selecting the elbow point in the inertia vs clusters graph. Sci-kit learn provides tremendous support for unsupervised learning in python and one of the basic models include <code class="language-text">KMeans()</code>.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token comment"># Import KMeans</span>
 <span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>cluster <span class="token keyword">import</span> KMeans
 
@@ -75,6 +77,7 @@ centroids_y <span class="token operator">=</span> centroids<span class="token pu
 <span class="token comment"># Make a scatter plot of centroids_x and centroids_y</span>
 plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>centroids_x<span class="token punctuation">,</span>centroids_y<span class="token punctuation">,</span>marker<span class="token operator">=</span><span class="token string">'D'</span><span class="token punctuation">,</span>s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>So now everytime, we feed a new datapoint to our model, it will try to calculate its Euclidean distance from each of the centroid, and assign the datapoint to that cluster having shortest Euclidean distance </p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 572px;"
@@ -147,8 +150,22 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
   </a>
     </span></p>
 <p>To improve model performance one can use Principal Component Analysis(PCA) on the dataset. It helps in reducing the number of dimensions of a large dataset. The last thing that I was introduced to was Non-negative matrix factorization (NMF). It is also a dimension-reduction technique but increases the interpretability. One can build a recommender system using NMF. </p>
-<p>I would like to take this blog and share my recent achievement : Data Scientist.</p>
-<p>After spending 100+ hours on Datacamp doing the exercises and tutorials, I have finally completed its Data Scientist with Python Career Track.</p>
+<p>Some steps for Principal Component Analysis:</p>
+<ol>
+<li>Let's say our dataset has D dimensions and S samples</li>
+<li>Compute the mean vector for each dimension</li>
+<li>Compute Co-variance matrix</li>
+<li>Compute eigen-values and eigen-vectors</li>
+<li>Sort eigen-vectors based upon descending eigen-values</li>
+<li>To reduce our model to D" dimensions. select first D" samples from the sorted list</li>
+<li>Using this new D"xS matrix, transform the samples to a new space.</li>
+</ol>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css">If the above steps seem to be full of jargons<span class="token punctuation">,</span> don't worry<span class="token punctuation">,</span>
+a lot of it can be handled by python. And incase you still want to know the details<span class="token punctuation">,</span> 
+a basic Linear Algebra course will help a lot.</code></pre></div>
+<br/>
+Lastly, I would like to take this moment and share my recent achievement:  <strong>Data Scientist</strong> 
+<p>After spending 100+ hours on Datacamp doing their exercises and tutorials, I have finally completed its Data Scientist with Python Career Track.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;"
